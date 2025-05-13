@@ -66,6 +66,7 @@ def predict():
     img_array = np.expand_dims(img_array, axis=0) / 255.0
 
     prediction = model.predict(img_array)
-    predicted_class = class_labels[np.argmax(prediction)]
+    predicted_class = class_names[np.argmax(prediction)]
+
 
     return jsonify({'prediction': predicted_class})
